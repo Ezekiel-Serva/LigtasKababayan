@@ -22,7 +22,7 @@ echo "ADMIN.PHP";
 
     <div id="reports"></div>
 
-    <script src="admin.js"></script>
+    <script src="../admin.js"></script>
 </body>
 </html>
 

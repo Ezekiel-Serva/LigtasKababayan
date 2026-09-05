@@ -1,6 +1,6 @@
 function loadUsers(){
 
-fetch("get_users.php")
+fetch("../get_users.php")
 
 .then(response => response.json())
 .then(users => {
@@ -24,7 +24,7 @@ document.getElementById("rescuedBtn").addEventListener("click", function (){
         return;
     }
 
-    fetch("rescued.php", {
+    fetch("../rescued.php", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({id: userID})
@@ -39,6 +39,7 @@ document.getElementById("rescuedBtn").addEventListener("click", function (){
     
     .catch(error => {
         alert("Failed to rescue user");
+		console.log(error);
     });
 });
 

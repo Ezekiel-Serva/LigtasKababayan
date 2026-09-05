@@ -36,10 +36,11 @@ document.getElementById("locate").addEventListener("click", function () {
         	}          
         },
 		{
-			timeout: 2000
+			timeout: 5000,
+			enableHighAccuracy: true,
+			maximumAge: 0
 		}
     );
-
 });
 
 
@@ -61,10 +62,9 @@ document.getElementById("submit").addEventListener("click", function () {
     if (!lat || !lng) {
         document.getElementById("info").textContent =
             "ERROR: No location captured. Click 'Locate my Location' first.";
-
         return;
     }
-	alert("Information Sent!")
+		alert("Information Sent!")
 
 
     const formData = new FormData();
@@ -85,7 +85,7 @@ document.getElementById("submit").addEventListener("click", function () {
     document.getElementById("info").textContent = "Sending report...";
 
 
-    fetch("save.php", {
+    fetch("../save.php", {
     method: "POST",
     body: formData
 })

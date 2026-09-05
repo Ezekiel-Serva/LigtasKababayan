@@ -7,21 +7,19 @@
     <title>Request Help</title>
 	<link rel="stylesheet" href="/LigtasKababayan_App/style.css">
 </head>
-  <body>
-    
+<body>  
     <header>
       <h1>Request Help</h1>
     </header>
     
     <p>Please fill in the fields below.</p>
 
-    <label><b>1. Name:</b></label><br>
+   	<b>1. Name:</b><br>
     <input type="text" id="name" placeholder="Fist name, Lastname">
-
+	
     <br><br>
 
-    <label><b>2. Water Level:</b></label><br>
-
+    <b>2. Water Level::</b><br>
     <input type="radio" name="level" value="Ankle" id="ankle">
     Ankle
     <br>
@@ -39,24 +37,24 @@
 
     <br><br>
 
-    <label><b>3. Location:</b></label><br>
+    <b>3. Location:</b><br>
     <button type="button" id="locate">Get My Location</button>
-    <br><br>
-    
-	<label>4. Description (optional):</label>
-	<textarea rows="8" cols="30" id="locationDesc" placeholder="Description..."></textarea><br>
-	<br>
-	<label>5. Upload a photo:</label>
-    <input type="file" id="cameraInput" accept="image/*">
-    
-	<!--Latitude/Longitude Locator Id-->
+    <!--Latitude/Longitude Locator Id-->
     <input type="hidden" id="lat">
     <input type="hidden" id="lng">
+	<br><br>
+    
+	<b>4. Description:</b><br>
+	<textarea rows="8" cols="30" id="locationDesc" placeholder="Description..."></textarea><br>
+	<br>
+	<b>5. Send a Picture:</b><br>
+    <input type="file" id="cameraInput" accept="image/*">
+    
 
     <br><br>
 
-    <label><b>4. Headcount:</b></label><br>
-
+	
+	<b>6. Headcount:</b><br>
     <input type="radio" name="peoples" id="count1" value="1-10">
     1-10
 
@@ -81,14 +79,39 @@
     50+
 
     <br><br>
-    <label><b>5. Phone Number:</b></label><br>
+	<b>7. Phone Number:</b><br>
     <input type="tel" id="phone" placeholder="Phone Number">
 
     <br><br>
+
+	<b>8. Present Vulnerable Person:</b><br><br>
+	Select here if you are WITH a vulnerable person
+	<select name="with_v" id="with_Vul">
+		<option value="">- Please Select an option -</option>
+		<option value="with_senior_citizen">Senior Citizen</option>
+		<option value="with_children/baby">Children/Baby</option>
+		<option value="with_pregnant">Pregnant</option>
+		<option value="with_pwd">PWD</option>
+		<option value="with_injured">Injjred</option>
+	</select>
+	
+	<br><br>
+	
+	Select here if you are THE vulnerable person
+	<select name="user_v" id="user_Vul">
+		<option value="">- Please Select an option -</option>
+		<option value="user_senior_citizen">Senior Citizen</option>
+		<option value="user_child">Child</option>
+		<option value="user_pregnant">Pregnant</option>
+		<option value="user_pwd">PWD</option>
+		<option value="user_injured">Injured</option>
+	</select>	
+
+	<br><br>
     <button type="button" id="submit">Submit Information</button>
 
     <p id="info">Pending Report…</p>
 
-    <script src="script.js"></script>
-    </body>
-  </html>
+    <script src="../script.js"></script>
+</body>
+</html>

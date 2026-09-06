@@ -1,8 +1,3 @@
-<?php 
-include("../header.html"); 
-
-echo "ADMIN.PHP";
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,8 +9,9 @@ echo "ADMIN.PHP";
   <body>
 
     <header>
-    <h1>Admin</h1>
+        <?php include("../header.html"); ?>
 	</header>
+    <h1>Admin</h1>
 	  
     <input type="number" id="userID" placeholder="User Id"><br>
     <button id="rescuedBtn">RESCUED</button>

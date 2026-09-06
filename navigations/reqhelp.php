@@ -1,16 +1,16 @@
-<?php include("../header.html"); ?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Request Help</title>
-	<link rel="stylesheet" href="/LigtasKababayan_App/style.css">
+	<link rel="stylesheet" href="/LigtasKababayan_App/cssDesigns/reqhelp.css">
 </head>
 <body>  
     <header>
-      <h1>Request Help</h1>
+        <?php include("../header.html"); ?>
     </header>
+      <h1>Request Help</h1>
     
     <p>Please fill in the fields below.</p>
 
@@ -21,7 +21,7 @@
     </div>
     <br>
     <div class="waterlvlField">      
-        <b>2. Water Level::</b><br>
+        <b>2. Water Level:</b><br>
         <input type="radio" name="level" value="Ankle" id="ankle">
         Ankle
         <br>
@@ -57,7 +57,7 @@
         <hr>
         
     	<b>5. Send a Picture:</b><br>
-        <input type="file" id="cameraInput" accept="image/*">
+        <input type="file" id="imgInput" accept="image/*">
     </div>
     
     <br>
@@ -98,8 +98,8 @@
     <br>
 
     <div class="vulnerableField">
-    	<b>8. Present Vulnerable Person:</b><br><br>
-    	Select here if you are WITH a vulnerable person
+    	<b>8. Present Vulnerable Person:</b><br>
+    	Select here if you are WITH a vulnerable person<br>
     	<select name="with_v" id="with_Vul">
     		<option value="">- Please Select an option -</option>
     		<option value="with_senior_citizen">Senior Citizen</option>
@@ -109,7 +109,7 @@
     		<option value="with_injured">Injjred</option>
     	</select>
 	
-	    <br><hr>
+	    <br><br><hr>
 	
     	Select here if you are THE vulnerable person
     	<select name="user_v" id="user_Vul">
@@ -125,7 +125,7 @@
 	<br><br>
     <button type="button" id="submit">Submit Information</button>
 
-    <p id="info">Pending Report…</p>
+    <p>Report Information: <span id="info"></span></p>
 
     <script src="../script.js"></script>
 </body>

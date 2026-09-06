@@ -1,6 +1,4 @@
-<?php 
-include("../header.html"); 
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +9,8 @@ include("../header.html");
 </head>
 <body>
 	<header>
-		<h1>Authorized Personnel</h1>
+        <?php include("../header.html"); ?>
 	</header>
+		<h1>Authorized Personnel (Nothing here yet)</h1>
 </body>
 </html>

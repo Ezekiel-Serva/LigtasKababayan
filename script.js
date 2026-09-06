@@ -1,52 +1,49 @@
-// ========================
-// LOCATE
-// ========================
 
-document.getElementById("locate").addEventListener("click", function () {
-	navigator.geolocation.getCurrentPosition(
-        function(position) {
+// LOCATE Get the latitude and lognitude
 
+document.getElementById("locate").addEventListener("click", () => {
+	navigator.geolocation.getCurrentPosition(       
+        
+        (position) => {
             const latitude = position.coords.latitude;
             const longitude = position.coords.longitude;
 
             document.getElementById("lat").value = latitude;
             document.getElementById("lng").value = longitude;
 
+            alert("Location Captured");
+
+            //Not impoetant - for debugging purposes
+            document.getElementById("info").style.color = "green";
             document.getElementById("info").textContent =
                 "Location captured!\n" +
-                "Latitude: " + latitude + "\n" +
+               "Latitude: " + latitude + "\n" +
                 "Longitude: " + longitude;
-			
-			alert("Location Captured");
-
         },
-
-        function(error) {
-			
-			if (error.code === error.PERMISSION_DENIED) {
-            	alert("Location is unavailable.\n\n" + "Please turn on your Location on your phone.");
-        	}
-				
-        	else if (error.code === error.POSITION_UNAVAILABLE) {
-            	alert("Unable to get your location.\n\n" + "Please turn on Location on your phone, then try again.");
-        	}
-				
-        	else if (error.code === error.TIMEOUT) {
-				alert("Error: Unable to get your location\nTurn ON 'Location Services' on your phone\n\nQuick reminder:\nBefore clicking 'Get Location' make sure your phones 'Location Services' is ON.");
-        	}          
+        (error) => {
+			switch(error.code){
+                case error.PERMISSION_DENIED:
+                    alert("Please turn on Location Services and try again.");
+                    break;
+                case error.POSITION_UNAVAILABLE:
+            	    alert("Unable to get your location.\n\n" + "Please turn on Location on your phone, then try again.");
+                    break;
+                case error.TIMEOUT:
+                    alert("Getting your location is taking longer than usual — this can happen on weak signal, or if 'Location Services' is not turned On. " + 
+                          "Please try turning it On and try again. \n\nIf it keeps failing try moving on a different spot and try again. Make sure 'Location Services' is turned On.");
+            }
         },
 		{
-			timeout: 5000,
 			enableHighAccuracy: true,
+            timeout: 6000,
 			maximumAge: 0
 		}
     );
 });
 
 
-// ========================
-// SUBMIT
-// ========================
+
+// SUBMIT functionalities part
 
 document.getElementById("submit").addEventListener("click", function () {
 
@@ -55,11 +52,12 @@ document.getElementById("submit").addEventListener("click", function () {
     const lat = document.getElementById("lat").value;
     const lng = document.getElementById("lng").value;
 
-    const photo = document.getElementById("cameraInput").files[0];
+    const photo = document.getElementById("imgInput").files[0];
 	
 	
-    // Check if location dont exists
+    // Check if location dont exists (lat and lng has no values)
     if (!lat || !lng) {
+        document.getElementById("info").style.color = "red";
         document.getElementById("info").textContent =
             "ERROR: No location captured. Click 'Locate my Location' first.";
         return;
@@ -82,7 +80,7 @@ document.getElementById("submit").addEventListener("click", function () {
 
 
     // Show what we're sendingkkkkkkkk
-    document.getElementById("info").textContent = "Sending report...";
+    //document.getElementById("info").textContent = "Sending report...";
 
 
     fetch("../save.php", {
@@ -92,11 +90,13 @@ document.getElementById("submit").addEventListener("click", function () {
 
     .then(response => response.text())
     .then(result => {
+        document.getElementById("info").style.color = "green";
         document.getElementById("info").textContent =
             "SERVER RESPONSE:\n" + result;
     })
 
     .catch(error => {
+        document.getElementById("info").style.color;
         document.getElementById("info").textContent =
             "FETCH ERROR:\n" + error;
     });

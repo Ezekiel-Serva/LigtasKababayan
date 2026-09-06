@@ -1,4 +1,73 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.nameField{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 8px;
+    background-color: #e2e2e2;
+}
+.nameField input{
+    background-color: #fff;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+.waterlvlField{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 8px;  
+    background-color: #e2e2e2;
+}
+
+.locationsField{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 8px;
+    background-color: #e2e2e2;
+}
+.locationsField textarea{
+    background-color: #fff;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+.headcountField{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 8px;  
+    background-color: #e2e2e2;
+}
+
+.phoneNumField{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 8px;  
+    background-color: #e2e2e2;
+}
+.phoneNumField input{
+    background-color: #fff;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+.vulnerableField{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 8px;  
+    background-color: #e2e2e2;
+}
+.vulnerableField select{
+    background-color: #fff;
+    border: 1px solid black;
+    border-radius: 3px;
+}
 
 #submit{
-  font-size: 1.3em;
+    font-size: 1.5em;
 }
+
+
+
+

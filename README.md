@@ -47,13 +47,13 @@ but does not physically perform rescue operations.
 # Mockups
 
 ## Home page
-![Alt text]()
-
-## Register Page
 ![Alt text](mockups/HomePage.jpg)
 
-## Login Page
+## Register Page
 ![Alt text](mockups/Register.jpg)
+
+## Login Page
+![Alt text]()
 
 ## Request Help Page
 ![Alt text]()

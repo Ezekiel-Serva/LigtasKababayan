@@ -50,10 +50,10 @@ but does not physically perform rescue operations.
 ![Alt text]()
 
 ## Register Page
-![Alt text]()
+![Alt text](mockups/HomePage.jpg)
 
 ## Login Page
-![Alt text]()
+![Alt text](mockups/Register.jpg)
 
 ## Request Help Page
 ![Alt text]()

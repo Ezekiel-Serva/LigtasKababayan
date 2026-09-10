@@ -35,8 +35,10 @@ CREATE TABLE `user_info` (
   `phone` varchar(50) DEFAULT NULL,
   `status` varchar(100) NOT NULL DEFAULT 'active',
   `photo` varchar(225) DEFAULT NULL,
+  `vulnerable_status` varchar(125) DEFAULT NULL,
+  `vulnerable_type` varchar(125) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -47,10 +49,17 @@ SET @OLD_AUTOCOMMIT=@@AUTOCOMMIT, @@AUTOCOMMIT=0;
 LOCK TABLES `user_info` WRITE;
 /*!40000 ALTER TABLE `user_info` DISABLE KEYS */;
 INSERT INTO `user_info` VALUES
-(1,'sjjssj','Head',12.0751265,124.5900396,'sjsjdjd','41-50','123456797','rescued','uploads/Screenshot_2026-09-03-22-29-06-97.png'),
-(2,'ServaAmsnddndn','Head',12.0746066,124.5895143,'123356Naansn','1-10','789456123','rescued','uploads/FB_IMG_17885310832673762.jpg'),
-(3,'John Skdjfj','Head',12.0746232,124.5895323,'11111Avsdjfj111','50+','123456789','active','uploads/706706e384ae704d5021cc2db4984d96.jpg'),
-(4,'EzkielSeva','Neck',12.0746212,124.5895317,'Teseetinggg','50+','123456789','active','uploads/FB_IMG_17860134561790499.jpg');
+(1,'sjjssj','Head',12.0751265,124.5900396,'sjsjdjd','41-50','123456797','rescued','uploads/Screenshot_2026-09-03-22-29-06-97.png','',''),
+(2,'ServaAmsnddndn','Head',12.0746066,124.5895143,'123356Naansn','1-10','789456123','rescued','uploads/FB_IMG_17885310832673762.jpg','',''),
+(3,'John Skdjfj','Head',12.0746232,124.5895323,'11111Avsdjfj111','50+','123456789','rescued','uploads/706706e384ae704d5021cc2db4984d96.jpg','',''),
+(4,'EzkielSeva','Neck',12.0746212,124.5895317,'Teseetinggg','50+','123456789','active','uploads/FB_IMG_17860134561790499.jpg','',''),
+(5,'Ansjsdj','Head',12.0747467,124.5896604,'djdjddjdj','50+','4343','rescued',NULL,'',''),
+(6,'dnddj','Waist',12.0747472,124.5896606,'','31-40','4343','active',NULL,'',''),
+(7,'Vulnerable Test','Neck',12.0747469,124.5896611,'Dnwnsnx','11-20','123456789','active','uploads/Messenger_creation_31E441D3-3DEE-4D9F-B782-151CAFC63E5D.jpeg','',''),
+(8,'sjdjxh','Neck',12.0747463,124.5896603,'','11-20','43431','active',NULL,'',''),
+(9,'Testing','Head',12.0747463,124.5896603,'','21-30','1234567∞','rescued',NULL,'',''),
+(10,'Name Testing Fixed Bugs ','Head',12.0747475,124.5896610,'snsndjd','11-20','123456799','rescued','uploads/Messenger_creation_31E441D3-3DEE-4D9F-B782-151CAFC63E5D.jpeg','with_Vul','with_senior_citizen'),
+(11,'Testing New Vulnerable Names','Head',12.0747475,124.5896610,'Nsdjdjdj','','123456789','active','uploads/alien_run02.png','WITH_USER','Children/Baby');
 /*!40000 ALTER TABLE `user_info` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -65,4 +74,4 @@ SET AUTOCOMMIT=@OLD_AUTOCOMMIT;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*M!100616 SET NOTE_VERBOSITY=@OLD_NOTE_VERBOSITY */;
 
--- Dump completed on 2026-09-08 23:51:56
+-- Dump completed on 2026-09-10 15:23:31

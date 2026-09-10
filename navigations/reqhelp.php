@@ -100,25 +100,25 @@
     <div class="vulnerableField">
     	<b>8. Present Vulnerable Person:</b><br>
     	Select here if you are WITH a vulnerable person<br>
-    	<select name="with_v" id="with_Vul">
+    	<select name="WITH_USER">
     		<option value="">- Please Select an option -</option>
-    		<option value="with_senior_citizen">Senior Citizen</option>
-    		<option value="with_children/baby">Children/Baby</option>
-    		<option value="with_pregnant">Pregnant</option>
-    		<option value="with_pwd">PWD</option>
-    		<option value="with_injured">Injjred</option>
+    		<option value="Senior_Citizen">Senior Citizen</option>
+    		<option value="Children/Baby">Children/Baby</option>
+    		<option value="Pregnant">Pregnant</option>
+    		<option value="PWD">PWD</option>
+    		<option value="Injured">Injured</option>
     	</select>
 	
 	    <br><br><hr>
 	
     	Select here if you are THE vulnerable person
-    	<select name="user_v" id="user_Vul">
+    	<select name="USER">
     		<option value="">- Please Select an option -</option>
-    		<option value="user_senior_citizen">Senior Citizen</option>
-    		<option value="user_child">Child</option>
-    		<option value="user_pregnant">Pregnant</option>
-    		<option value="user_pwd">PWD</option>
-    		<option value="user_injured">Injured</option>
+    		<option value="Senior_Citizen">Senior Citizen</option>
+    		<option value="Child">Child</option>
+    		<option value="Pregnant">Pregnant</option>
+    		<option value="PWD">PWD</option>
+    		<option value="Injured">Injured</option>
     	</select>
     </div>
 

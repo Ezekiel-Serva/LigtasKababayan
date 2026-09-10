@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Find Shelter</title>
-	<link rel="stylesheet" href="/LigtasKababayan_App/style.css">
+	<link rel="stylesheet" href="../cssDesigns/findShelter.css">
 </head>
   <body>
     

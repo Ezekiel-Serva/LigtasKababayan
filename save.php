@@ -21,6 +21,9 @@ $description = $_POST["description"] ?? "";
 $headcount = $_POST["headcount"] ?? "";
 $phone = $_POST["phone"] ?? "";
 
+$vulnerableStatus = $_POST["vulnerable_status"] ?? "";
+$vulnerableType = $_POST["vulnerable_type"] ?? "";
+
 
 // ========================
 // GET PHOTO
@@ -49,12 +52,12 @@ if(isset($_FILES["photo"]) && $_FILES["photo"]["error"] === UPLOAD_ERR_OK){
 
 $statement = $conn->prepare("
   INSERT INTO user_info
-  (name, water_level, lat, lng, description, headcount, phone, photo)
-  VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+  (name, water_level, lat, lng, description, headcount, phone, photo, vulnerable_status, vulnerable_type)
+  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 ");
 
 $statement->bind_param(
-  "ssddssss",
+  "ssddssssss",
   $name,
   $waterLevel,
   $lat,
@@ -62,7 +65,9 @@ $statement->bind_param(
   $description,
   $headcount,
   $phone,
-  $photoPath
+  $photoPath,
+  $vulnerableStatus,
+  $vulnerableType
 );
 
 

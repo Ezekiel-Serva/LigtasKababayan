@@ -1,0 +1,20 @@
+
+    .navs-container{
+        background-color: hwb(39 41% 7%);
+        position: relative;
+        max-width: 100%;
+        overflow-x: auto;
+    }
+    .navs{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        width: max-content;
+    }
+    a{
+        text-decoration: none;
+        padding: 13px;
+        font-size: 1.2em;
+        flex-wrap: 0;
+        font-weight: bold;
+    }

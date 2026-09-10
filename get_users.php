@@ -21,7 +21,9 @@ $result = $conn->query("
   lng,
   description,
   phone,
-  photo
+  photo,
+  vulnerable_status,
+  vulnerable_type
   FROM user_info
   WHERE status = 'active'
   ORDER BY CASE water_level

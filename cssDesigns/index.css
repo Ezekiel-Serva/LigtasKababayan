@@ -2,6 +2,9 @@
 Css made specifically for index.php
 Just to organize stuff
 */
+body{
+    margin: 0;
+}
 
 main{
     /*border: 1px solid black;*/
@@ -15,9 +18,9 @@ main{
     position: absolute;
     display: flex;
     top: 0;
-    right: 18px;
+    right: 14px;
     /*border: 1px solid black;*/
-    gap: 16px;    
+    gap: 10px;    
 }
 .auth-buttons button{
     font-weight: bold;

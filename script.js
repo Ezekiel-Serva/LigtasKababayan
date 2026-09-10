@@ -48,12 +48,15 @@ document.getElementById("locate").addEventListener("click", () => {
 document.getElementById("submit").addEventListener("click", function() {
 
     const waterLevel = document.querySelector('input[name="level"]:checked');
-    const headcount = document.querySelector('input[name="peoples"]:checked');
+    const headcount = document.querySelector('input[name="peoples"]:checked');   
+    
     const lat = document.getElementById("lat").value;
     const lng = document.getElementById("lng").value;
 
     const photo = document.getElementById("imgInput").files[ 0 ];
 
+    const withVulStatus = document.querySelector('select[name="WITH_USER"]');
+    const isVulStatus = document.querySelector('select[name="USER"]');
 
     // Check if location dont exists (lat and lng has no values)
     if (!lat || !lng) {
@@ -73,6 +76,18 @@ document.getElementById("submit").addEventListener("click", function() {
     formData.append("description", document.getElementById("locationDesc").value);
     formData.append("headcount", headcount ? headcount.value : "");
     formData.append("phone", document.getElementById("phone").value);
+    
+    if (withVulStatus && withVulStatus.value != ""){
+        formData.append("vulnerable_status", withVulStatus ? withVulStatus.name : "");
+        formData.append("vulnerable_type", withVulStatus ? withVulStatus.value : "");       
+    }
+    else if (isVulStatus && isVulStatus.value != "") {
+        formData.append("vulnerable_status", isVulStatus ? isVulStatus.name : "");
+        formData.append("vulnerable_type", isVulStatus ? isVulStatus.value : "");
+    }
+
+    
+    
 
     if (photo) {
         formData.append("photo", photo);

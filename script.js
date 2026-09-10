@@ -99,21 +99,24 @@ document.getElementById("submit").addEventListener("click", function() {
 
 
     fetch("../save.php", {
-        method: "POST",
-        body: formData
-    })
+    method: "POST",
+    body: formData
+})
 
-        .then(response => response.text())
-        .then(result => {
-            document.getElementById("info").style.color = "green";
-            document.getElementById("info").textContent =
-                "SERVER RESPONSE:\n" + result;
-        })
+.then(response => response.text())
+.then(result => {
+    alert(result);
 
-        .catch(error => {
-            document.getElementById("info").style.color;
-            document.getElementById("info").textContent =
-                "FETCH ERROR:\n" + error;
-        });
+    document.getElementById("info").style.color = "green";
+    document.getElementById("info").textContent =
+        "SERVER RESPONSE:\n" + result;
+})
 
+.catch(error => {
+    alert("Fetch Error: " + error);
+
+    document.getElementById("info").style.color = "red";
+    document.getElementById("info").textContent =
+        "FETCH ERROR:\n" + error;
+});
 });

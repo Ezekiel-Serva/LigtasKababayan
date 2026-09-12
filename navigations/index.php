@@ -27,9 +27,9 @@ session_start();
     <p>LigtasKababayan is a localized, responsive web system designed to bridge the critical communication gap between rural GIDAs, urban GIDAs, and local emergency responders (LGUs/Barangay DRRMOs) before and during severe flooding events. The system operates in two distinct phases to maximize survival rates and logistics efficiency. By doing this, LigtasKababayan aims to reduce rescue response time and prevent deaths due to misinformation and delayed response.</p>
     </main>
 		<?php if (isset($_SESSION["barangay"])) { ?>
-   		<div style="position: fixed; right: 20px; bottom: 20px;">
-    	Barangay: <?= $_SESSION["barangay"] ?>
-    	</div>
-<?php } ?>
+   		<div class="barangay-box" style="position: fixed; right: 20px; bottom: 20px;">
+        Barangay: <?php echo $_SESSION["barangay"]; ?>
+        </div>
+		<?php } ?>
 </body>
 </html>

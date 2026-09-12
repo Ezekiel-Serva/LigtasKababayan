@@ -56,7 +56,7 @@ but does not physically perform rescue operations.
 ![Alt text](mockups/Login.jpg)
 
 ## Request Help Page
-![Alt text](mockups/Request.jpg)
+![Alt text](mockups/Request_Help.jpg)
 
 ## Find Shelter Page
 ![Alt text]()

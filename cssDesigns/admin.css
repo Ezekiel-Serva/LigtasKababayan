@@ -6,19 +6,77 @@ main{
     margin: 10px;
 } 
 
-.report-cont{
-    position: relative;
-    width: 100%;
-    max-width: 800px;
+.report-container{
+    height: 100%;
+    display: grid;
+    grid-template-areas: "normalQueue vulnerableQueue";
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 30px;
 }
 
-#reports{
-    margin-top: 10px;
-    position: absolute;
+#normalQueue{  
+    grid-area: normalQueue;
+    display: grid;
+    grid-template-areas: 
+        "normalQueueHeader"
+        "normalQueueReports";
+    grid-template-rows: 50px 1fr;
+    position: relative;
+}
+
+#normalQueueHeader{
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    grid-area: normalQueueHeader;
     border: 1px solid black;
-    width: 100%;
-    max-height: 600px;
-    box-sizing: border-box;
-    overflow-x: auto;
-    overflow-y: auto;
+    height: fit-content;
+    padding: 10px 0px ;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    background-color: hwb(240 69% 24%);
+    position: inherit;
+}
+
+#normalQueueReports{
+    border: 1px solid black;
+    grid-area: normalQueueReports;
+    padding: 10px;
+    background-color: hwb(240 31% 55% / 0.7294117647058823);
+    color: white;
+    font-size: 1.2em;
+    overflow-x: scroll;
+}
+
+#vulnerableQueue{
+    grid-area: vulnerableQueue;
+    display: grid;
+    grid-template-areas:
+        "vulnerableQueueHeader"
+        "vulnerableQueueReports";
+    grid-template-rows: 50px 1fr;
+    position: relative;
+}
+
+#vulnerableQueueHeader{
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    grid-area: vulnerableQueueHeader;
+    border: 1px solid black;
+    font-size: 1.5em;
+    height: fit-content;
+    padding: 10px 0px;
+    font-weight: bold;
+    text-align: center;
+    background-color: hwb(0 69% 24%);
+    position: inherit;
+}
+#vulnerableQueueReports{
+    border: 1px solid black;
+    grid-area: vulnerableQueueReports;
+    padding: 10px;
+    background-color: hwb(0 34% 54% / 0.7294117647058823);
+    color: white;
+    font-size: 1.2em;
+    overflow-x: scroll;
 }

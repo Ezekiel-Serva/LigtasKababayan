@@ -13,13 +13,22 @@
 	</header>
 	<main>
     <h1>Admin</h1>
-    <a href="vulnerablePage.php"><button id="vulnerableQueue">Vulnerable Queue</button></a>
     <br><br>
     <button id="rescuedBtn">RESCUED</button>
-    <input type="number" id="userID" placeholder="User Id"><br>
+    <input type="number" id="userID" placeholder="User Id"><br><br>
 
-    <div class="report-cont">     
-        <div id="reports"></div>
+    <div class="report-container"> 
+        
+        <div id="normalQueue">
+            <div id="normalQueueHeader">Normal Queue</div>
+            <div id="normalQueueReports"></div>
+        </div>
+
+        <div id="vulnerableQueue">
+            <div id="vulnerableQueueHeader">Vulnerable Queue</div>
+            <div id="vulnerableQueueReports">..VulnerableReorrs</div>
+        </div>
+    
     </div>
     </main>
 

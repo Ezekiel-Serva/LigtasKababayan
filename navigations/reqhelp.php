@@ -10,7 +10,8 @@
     <header>
         <?php include("../header.html"); ?>
     </header>
-      <h1>Request Help</h1>
+    <div class="mainContainer"> 
+    <h1>Request Help</h1>
     
     <p>Please fill in the fields below.</p>
 
@@ -111,7 +112,7 @@
 	
 	    <br><br><hr>
 	
-    	Select here if you are THE vulnerable person
+    	Select here if you are THE vulnerable person<br>
     	<select name="USER">
     		<option value="">- Please Select an option -</option>
     		<option value="Senior_Citizen">Senior Citizen</option>
@@ -124,6 +125,7 @@
 
 	<br><br>
     <button type="button" id="submit">Submit Information</button>
+    </div>
 
     <p>Report Information: <span id="info"></span></p>
 

@@ -33,6 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		if (password_verify($password, $user["password"])) {
 			$_SESSION["user_id"] = $user["id"];
 			$_SESSION["fullname"] = $user["fullname"];
+			$_SESSION["barangay"] = $user["barangay"];
 
 			echo "<script>
 			alert('Login Successful!');

@@ -4,19 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Request Help</title>
-	<link rel="stylesheet" href="/LigtasKababayan_App/cssDesigns/reqhelp.css">
+	<link rel="stylesheet" href="../cssDesigns/reqhelp.css">
 </head>
 <body>  
     <header>
         <?php include("../header.html"); ?>
     </header>
-      <h1>Request Help</h1>
+    <div class="mainContainer"> 
+    <h1>Request Help</h1>
     
     <p>Please fill in the fields below.</p>
 
     <div class="nameField">
         <b>1. Name:</b><br>
-        <input type="text" id="name" placeholder="Fist name, Lastname">
+        <input type="text" id="name" placeholder="First name, Last name">
         <br>    
     </div>
     <br>
@@ -84,7 +85,7 @@
         41-50
     
     	<br>
-        <input type="radio" name="peoples" id="count5" value="50+">
+        <input type="radio" name="peoples" id="count6" value="50+">
         50+
     </div>
 
@@ -111,7 +112,7 @@
 	
 	    <br><br><hr>
 	
-    	Select here if you are THE vulnerable person
+    	Select here if you are THE vulnerable person<br>
     	<select name="USER">
     		<option value="">- Please Select an option -</option>
     		<option value="Senior_Citizen">Senior Citizen</option>
@@ -124,6 +125,7 @@
 
 	<br><br>
     <button type="button" id="submit">Submit Information</button>
+    </div>
 
     <p>Report Information: <span id="info"></span></p>
 

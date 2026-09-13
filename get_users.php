@@ -4,6 +4,8 @@
 //††††††††††††††
 include("database_conn.php");
 
+header("Content-Type: application/json");
+
 if ($conn->connect_error){
   http_response_code(500);
   echo json_encode([
@@ -20,6 +22,7 @@ $result = $conn->query("
   lat,
   lng,
   description,
+  headcount,
   phone,
   photo,
   vulnerable_status,
@@ -36,13 +39,19 @@ $result = $conn->query("
   END
   ");
 
+if (!$result) {
+  http_response_code(500);
+  echo json_encode([
+    "error" => "Failed to load reports: " . $conn->error
+  ]);
+  exit;
+}
+
 $users = [];
 
 while($row = $result->fetch_assoc()){
   $users[] = $row;
 }
-
-header("Content-Type: application/json");
 
 echo json_encode($users);
 

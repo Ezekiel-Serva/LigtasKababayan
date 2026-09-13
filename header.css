@@ -15,6 +15,6 @@
         text-decoration: none;
         padding: 13px;
         font-size: 1.2em;
-        flex-wrap: 0;
+        flex-shrink: 0;
         font-weight: bold;
     }

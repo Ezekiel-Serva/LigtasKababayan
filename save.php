@@ -23,6 +23,12 @@ $phone = $_POST["phone"] ?? "";
  
 $vulnerableStatus = $_POST["vulnerable_status"] ?? ""; 
 $vulnerableType = $_POST["vulnerable_type"] ?? ""; 
+
+if ($name === "" || $waterLevel === "" || $lat === "" || $lng === "" || $headcount === "" || $phone === "") {
+  http_response_code(400);
+  echo "Please complete all required fields.";
+  exit;
+}
  
  
 // ======================== 
@@ -36,13 +42,21 @@ if(isset($_FILES["photo"]) && $_FILES["photo"]["error"] === UPLOAD_ERR_OK){
     $photo = $_FILES["photo"]; 
  
     $fileName = basename($photo["name"]); 
+
+    if (!is_dir("uploads")) {
+        mkdir("uploads", 0777, true);
+    }
  
     $photoPath = "uploads/" . $fileName; 
  
-    move_uploaded_file( 
+    $photoSaved = move_uploaded_file( 
         $photo["tmp_name"], 
         $photoPath 
     ); 
+
+    if (!$photoSaved) {
+        $photoPath = null;
+    }
 } 
  
  

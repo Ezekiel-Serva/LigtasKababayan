@@ -1,8 +1,15 @@
-// LOCATE Get the latitude and lognitude
+// GET USER LOCATION
 document.getElementById("locate").addEventListener("click", () => {
-    navigator.geolocation.getCurrentPosition(
-        
 
+    // Check if the browser supports location
+    if (!navigator.geolocation) {
+        alert("Location is not supported by this browser.");
+        return;
+    }
+
+    navigator.geolocation.getCurrentPosition(
+
+        // If location is captured
         (position) => {
             const latitude = position.coords.latitude;
             const longitude = position.coords.longitude;
@@ -12,27 +19,39 @@ document.getElementById("locate").addEventListener("click", () => {
 
             alert("Location Captured");
 
-            //Not impoetant - for debugging purposes
             document.getElementById("info").style.color = "green";
             document.getElementById("info").textContent =
                 "Location captured!\n" +
                 "Latitude: " + latitude + "\n" +
                 "Longitude: " + longitude;
         },
-        
+
+        // If location fails
         (error) => {
-            switch (error.code) {
-                case error.PERMISSION_DENIED:
-                    alert("Please turn on Location Services and try again.");
-                    break;
-                case error.POSITION_UNAVAILABLE:
-                    alert("Unable to get your location.\n\n" + "Please turn on Location on your phone, then try again.");
-                    break;
-                case error.TIMEOUT:
-                    alert("Getting your location is taking longer than usual — this can happen on weak signal, or if 'Location Services' is not turned On. " +
-                        "Please try turning it On and try again. \n\nIf it keeps failing try moving on a different spot and try again. Make sure 'Location Services' is turned On.");
+            if (error.code === error.PERMISSION_DENIED) {
+                alert("Please turn on Location Services and try again.");
+            }
+
+            else if (error.code === error.POSITION_UNAVAILABLE) {
+                alert(
+                    "Unable to get your location.\n\n" +
+                    "Please turn on Location on your phone, then try again."
+                );
+            }
+
+            else if (error.code === error.TIMEOUT) {
+                alert(
+                    "Getting your location is taking longer than usual. " +
+                    "Please check your signal and Location Services, then try again."
+                );
+            }
+
+            else {
+                alert("Unable to capture your location.");
             }
         },
+
+        // Location settings
         {
             enableHighAccuracy: true,
             timeout: 25000,
@@ -42,81 +61,129 @@ document.getElementById("locate").addEventListener("click", () => {
 });
 
 
+// SUBMIT REPORT
+document.getElementById("submit").addEventListener("click", function () {
 
-// SUBMIT functionalities part
+    const name = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
 
-document.getElementById("submit").addEventListener("click", function() {
+    const waterLevel =
+        document.querySelector('input[name="level"]:checked');
 
-    const waterLevel = document.querySelector('input[name="level"]:checked');
-    const headcount = document.querySelector('input[name="peoples"]:checked');   
-    
+    const headcount =
+        document.querySelector('input[name="peoples"]:checked');
+
     const lat = document.getElementById("lat").value;
     const lng = document.getElementById("lng").value;
 
-    const photo = document.getElementById("imgInput").files[ 0 ];
+    const description =
+        document.getElementById("locationDesc").value;
 
-    const withVulStatus = document.querySelector('select[name="WITH_USER"]');
-    const isVulStatus = document.querySelector('select[name="USER"]');
+    const photo =
+        document.getElementById("imgInput").files[0];
 
-    // Check if location dont exists (lat and lng has no values)
+    const withVulnerable =
+        document.querySelector('select[name="WITH_USER"]');
+
+    const isVulnerable =
+        document.querySelector('select[name="USER"]');
+
+
+    // Check the required information
+    if (!name || !waterLevel || !headcount || !phone) {
+        document.getElementById("info").style.color = "red";
+        document.getElementById("info").textContent =
+            "ERROR: Please complete the name, water level, headcount, and phone number.";
+
+        return;
+    }
+
+
+    // Check if location was captured
     if (!lat || !lng) {
         document.getElementById("info").style.color = "red";
         document.getElementById("info").textContent =
-            "ERROR: No location captured. Click 'Locate my Location' first.";
+            "ERROR: No location captured. Click Get My Location first.";
+
         return;
     }
-    alert("Information Sent!")
 
 
+    // Put the information inside FormData
     const formData = new FormData();
-    formData.append("name", document.getElementById("name").value);
-    formData.append("water_level", waterLevel ? waterLevel.value : "");
+
+    formData.append("name", name);
+    formData.append("water_level", waterLevel.value);
     formData.append("lat", lat);
     formData.append("lng", lng);
-    formData.append("description", document.getElementById("locationDesc").value);
-    formData.append("headcount", headcount ? headcount.value : "");
-    formData.append("phone", document.getElementById("phone").value);
-    
-    if (withVulStatus && withVulStatus.value != ""){
-        formData.append("vulnerable_status", withVulStatus ? withVulStatus.name : "");
-        formData.append("vulnerable_type", withVulStatus ? withVulStatus.value : "");       
-    }
-    else if (isVulStatus && isVulStatus.value != "") {
-        formData.append("vulnerable_status", isVulStatus ? isVulStatus.name : "");
-        formData.append("vulnerable_type", isVulStatus ? isVulStatus.value : "");
+    formData.append("description", description);
+    formData.append("headcount", headcount.value);
+    formData.append("phone", phone);
+
+
+    // Check vulnerable-person selections
+    if (withVulnerable.value !== "") {
+        formData.append("vulnerable_status", withVulnerable.name);
+        formData.append("vulnerable_type", withVulnerable.value);
     }
 
-    
-    
+    else if (isVulnerable.value !== "") {
+        formData.append("vulnerable_status", isVulnerable.name);
+        formData.append("vulnerable_type", isVulnerable.value);
+    }
 
+    else {
+        formData.append("vulnerable_status", "");
+        formData.append("vulnerable_type", "");
+    }
+
+
+    // Add the photo if the user selected one
     if (photo) {
         formData.append("photo", photo);
     }
 
 
-    // Show what we're sendingkkkkkkkk
-    //document.getElementById("info").textContent = "Sending report...";
+    document.getElementById("info").style.color = "black";
+    document.getElementById("info").textContent =
+        "Sending report...";
 
 
+    let requestWasSuccessful = false;
+
+    // Send the report to save.php
     fetch("../save.php", {
-    method: "POST",
-    body: formData
-})
+        method: "POST",
+        body: formData
+    })
 
-.then(response => response.text())
-.then(result => {
-    alert(result);
+    .then(response => {
+        requestWasSuccessful = response.ok;
 
-    document.getElementById("info").style.color = "green";
-    document.getElementById("info").textContent =
-        "SERVER RESPONSE:\n" + result;
-})
+        return response.text();
+    })
 
-.catch(error => {
-    alert("Fetch Error: " + error);
+    .then(result => {
 
-    document.getElementById("info").style.color = "red";
-    document.getElementById("info").textContent =
-        "FETCH ERROR:\n" + error;
-});
+        // Check if PHP returned an error
+        if (!requestWasSuccessful) {
+            throw new Error(
+                result || "The report could not be saved."
+            );
+        }
+
+        alert(result);
+
+        document.getElementById("info").style.color = "green";
+        document.getElementById("info").textContent =
+            "SERVER RESPONSE:\n" + result;
+    })
+
+    .catch(error => {
+        alert("Error: " + error.message);
+
+        document.getElementById("info").style.color = "red";
+        document.getElementById("info").textContent =
+            "ERROR:\n" + error.message;
+    });
 });

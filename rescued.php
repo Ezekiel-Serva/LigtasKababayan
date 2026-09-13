@@ -7,7 +7,7 @@ include("database_conn.php");
 $json = file_get_contents("php://input");
 $data = json_decode($json, true);
 
-if(!isset($data["id"])){
+if(!isset($data["id"]) || !is_numeric($data["id"])){
   echo"User id is required";
   exit;
 }

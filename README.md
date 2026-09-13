@@ -53,13 +53,13 @@ but does not physically perform rescue operations.
 ![Alt text](mockups/Register.jpg)
 
 ## Login Page
-![Alt text]()
+![Alt text](mockups/Login.jpg)
 
 ## Request Help Page
-![Alt text]()
+![Alt text](mockups/Request_Help.jpg)
 
 ## Find Shelter Page
-![Alt text]()
+![Alt text](mockups/Find_Shelter.jpg)
 
 ## Admin page
 ![Alt text]()

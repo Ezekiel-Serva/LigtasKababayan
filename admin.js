@@ -5,7 +5,7 @@ fetch("../get_users.php")
 .then(response => response.json())
 .then(users => {
     console.log(users);
-    const reports = document.getElementById("reports");
+    const reports = document.getElementById("normalQueueReports");
     reports.innerHTML = "<pre>" + JSON.stringify(users, null, 2) + "</pre>";
 })
 .catch(error => {

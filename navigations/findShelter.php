@@ -12,9 +12,26 @@
     
     <header>
         <?php include("../header.html"); ?>
-      </header>
-      <h1>Find Shelter (Nothing here yet)</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis laudantium mollitia aut magni minima ratione, esse nesciunt quaerat possimus maiores minus quae fugiat soluta repellendus corrupti doloremque cupiditate rem velit.</p>
-    </body>
-
-  </html>
+    </header>
+    <main>
+    <h1>Find Shelter</h1>
+        <div class="gridContainer">
+            
+        <div id="availableShelters">
+            <div id="availHeader">Available Shelters</div>
+            <div id="availReports">
+                
+            </div>
+        </div>
+        
+        <div id="occupiedShelters">
+            <div id="occHeader">Occupied Shelters</div>
+            <div id="occReports">
+                
+            </div>
+        </div>
+        
+        </div>
+    </main>
+</body>
+</html>

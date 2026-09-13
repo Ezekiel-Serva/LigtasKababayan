@@ -13,9 +13,11 @@
 	</header>
 	<main>
     <h1>Admin</h1>
-    <br><br>
+    <br>
     <button id="rescuedBtn">RESCUED</button>
-    <input type="number" id="userID" placeholder="User Id"><br><br>
+    <input type="number" id="userID" placeholder="User Id">
+
+    <a href="./apRegestration.php"><button>Assign An AP</button></a><br><br>
 
     <div class="report-container"> 
         

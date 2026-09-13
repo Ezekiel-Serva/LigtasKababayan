@@ -35,7 +35,7 @@ document.getElementById("locate").addEventListener("click", () => {
         },
         {
             enableHighAccuracy: true,
-            timeout: 6000,
+            timeout: 25000,
             maximumAge: 0
         }
     );

@@ -65,7 +65,7 @@ but does not physically perform rescue operations.
 ![Alt text](mockups/Admin.jpg)
 
 ## Authorized Personnel Page
-![Alt text]()
+![Alt text](mockups/Authorized_Personnel.jpg)
 
 
 

@@ -62,7 +62,7 @@ but does not physically perform rescue operations.
 ![Alt text](mockups/Find_Shelter.jpg)
 
 ## Admin page
-![Alt text]()
+![Alt text](mockups/Admin.jpg)
 
 ## Authorized Personnel Page
 ![Alt text]()

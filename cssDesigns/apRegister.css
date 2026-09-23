@@ -4,3 +4,47 @@ body{
 main{
     margin: 10px;
 }
+
+/* Small premium improvements */
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: whitesmoke;
+}
+
+main{
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 25px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px lightgray;
+}
+
+main h1{
+    margin-top: 15px;
+}
+
+form input{
+    width: 95%;
+    padding: 9px;
+    margin: 5px 0 14px;
+    border: 1px solid gray;
+    border-radius: 6px;
+}
+
+form button{
+    padding: 9px 15px;
+    border: 1px solid gray;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#registerAP{
+    width: 100%;
+}
+
+form button:hover{
+    box-shadow: 0 4px 8px lightgray;
+}

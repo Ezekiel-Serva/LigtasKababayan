@@ -152,3 +152,56 @@ nav a.active, .tabBar a.active {
     max-width: 400px;
     margin: 0 auto;
 }
+
+/* Small premium improvements */
+.apDashboard, .loginPage{
+    margin-top: 35px;
+}
+
+.assignedCenterRow, .statusBox, .updateBox, .locationBox, .loginPage form{
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 14px #dddddd;
+}
+
+.assignedCenterRow{
+    padding: 12px;
+}
+
+.statusBox, .updateBox{
+    overflow: hidden;
+}
+
+.locationBox{
+    margin-top: 18px;
+    padding: 15px;
+    border: 1px solid #333333;
+}
+
+.loginPage form{
+    padding: 20px;
+    border: 1px solid #cccccc;
+}
+
+.loginPage input{
+    width: 92%;
+    padding: 8px;
+    margin: 5px 0 12px;
+    border: 1px solid #999999;
+    border-radius: 5px;
+}
+
+.loginPage button, .locationBox button{
+    padding: 8px 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button{
+    transition: 0.2s;
+}
+
+button:hover{
+    transform: translateY(-1px);
+}

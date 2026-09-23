@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["phoneNum"]) && !isset
             $_SESSION["fullName"] = $authPerson["fullName"];
             $_SESSION["phoneNumber"] = $authPerson["phoneNumber"];
             $_SESSION["assignedLoc"] = $authPerson["assignedLoc"];
-            $_SESSION["barangayId"] = $authPerson["barangayId"] ?? null;
+            $_SESSION["barangayId"] = $authPerson["barangayId"];
         } else {
             $loginError = "Wrong password.";
         }
@@ -95,11 +95,10 @@ $locationMessage = "";
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_SESSION["id"]) && isset($_POST["confirmLocation"])) {
     $lat = $_POST["latitude"] ?? "";
     $lng = $_POST["longitude"] ?? "";
-    $assignedLoc = $_SESSION["assignedLoc"];
 
     if ($lat !== "" && $lng !== "") {
         $stmt = $conn->prepare("UPDATE evacuationCenters SET latitude = ?, longitude = ? WHERE centerName = ?");
-        $stmt->bind_param("dds", $lat, $lng, $assignedLoc);
+        $stmt->bind_param("dds", $lat, $lng, $_SESSION["assignedLoc"]);
 
         if ($stmt->execute()) {
             $locationMessage = "Location confirmed and saved.";
@@ -118,9 +117,8 @@ $displayOccupancy = null;
 $displayAvailable = null;
 
 if (isset($_SESSION["id"])) {
-    $assignedLoc = $_SESSION["assignedLoc"];
     $stmt = $conn->prepare("SELECT maxCapacity, currentOccupancy FROM evacuationCenters WHERE centerName = ?");
-    $stmt->bind_param("s", $assignedLoc);
+    $stmt->bind_param("s", $_SESSION["assignedLoc"]);
     $stmt->execute();
     $centerResult = $stmt->get_result();
 
@@ -139,8 +137,7 @@ if (isset($_SESSION["id"])) {
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Authorized Personnel</title>
-	<link rel="stylesheet" href="../cssDesigns/authPerson.css">
-</head>
+<link rel="stylesheet" href="../cssDesigns/authPerson.css?v=2"></head>
 <body>
 	<header>
         <?php include("../header.html"); ?>

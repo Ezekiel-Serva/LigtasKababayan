@@ -80,3 +80,65 @@ main{
     font-size: 1.2em;
     overflow-x: scroll;
 }
+
+/* Small premium improvements */
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: whitesmoke;
+}
+
+main{
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+button, #userID{
+    padding: 10px 14px;
+    border: 1px solid gray;
+    border-radius: 7px;
+}
+
+button{
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px lightgray;
+}
+
+.report-container{
+    height: auto;
+    min-height: 500px;
+    margin-top: 20px;
+}
+
+#normalQueue, #vulnerableQueue{
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 16px lightgray;
+}
+
+#normalQueueReports, #vulnerableQueueReports{
+    min-height: 400px;
+}
+
+#normalQueueReports pre, #vulnerableQueueReports pre{
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    line-height: 1.6;
+}
+
+@media screen and (max-width: 700px){
+    .report-container{
+        grid-template-areas:
+            "normalQueue"
+            "vulnerableQueue";
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}

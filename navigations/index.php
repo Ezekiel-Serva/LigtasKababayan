@@ -7,7 +7,7 @@ session_start();
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>LigtasKababayan</title>
-	<link rel="stylesheet" href="../cssDesigns/index.css">
+<link rel="stylesheet" href="../cssDesigns/index.css?v=3">
 </head>
 <body>
     <?php include("../header.html");?>

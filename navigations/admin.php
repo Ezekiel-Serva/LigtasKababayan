@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Admin</title>
-	<link rel="stylesheet" href="../cssDesigns/admin.css">
+	<link rel="stylesheet" href="../cssDesigns/admin.css?v=2">
 </head>
   <body>
 
@@ -18,6 +18,13 @@
     <input type="number" id="userID" placeholder="User Id">
 
     <a href="./apRegestration.php"><button>Assign An AP</button></a><br><br>
+    <a href="./apRegestration.php">
+    <button>Assign An AP</button>
+    </a>
+    <button type="button">
+    Remove AP
+    </button>
+    <br><br>
 
     <div class="report-container"> 
         
@@ -28,7 +35,7 @@
 
         <div id="vulnerableQueue">
             <div id="vulnerableQueueHeader">Vulnerable Queue</div>
-            <div id="vulnerableQueueReports"></div>
+            <div id="vulnerableQueueReports">..VulnerableReorrs</div>
         </div>
     
     </div>
@@ -38,3 +45,4 @@
     <script src="../admin.js"></script>
 </body>
 </html>
+

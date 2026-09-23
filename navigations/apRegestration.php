@@ -1,5 +1,7 @@
 <?php
 include('../database_conn.php');
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $apFullName = trim($_POST["fullName"] ?? "");
@@ -23,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             window.location.href = './authPerson.php';
             </script>";
         } else {
-            if ($stmt->errno === 1062) {
+            if ($conn->errno === 1062) {
                 echo "<script>alert('This phone number is already registered.');</script>";
             } else {
                 echo "<script>alert('Failed to register AP. Please try again.');</script>";
@@ -41,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Authorized Personnel Registration</title>
-    <link rel="stylesheet" href="../cssDesigns/apRegister.css">
+<link rel="stylesheet" href="../cssDesigns/apRegister.css?v=2">
 </head>
 <body>
     <header>

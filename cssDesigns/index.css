@@ -1,32 +1,111 @@
 /*
-Css made specifically for index.php
-Just to organize stuff
+CSS for index.php
+Original code is kept, with simple design improvements added.
 */
-body{
+
+body {
     margin: 0;
 }
 
-main{
-    /*border: 1px solid black;*/
+/* Main content */
+main {
     position: relative;
-    max-width: 800px;
-    padding: 50px 25px 0px;
-    margin: 23px auto;
-    
+    max-width: 850px;
+    min-height: 330px;
+
+    margin: 50px auto;
+    padding: 80px 40px 40px;
+
+    background-color: white;
+
+    border: 1px solid #d5b36b;
+    border-top: 8px solid hwb(39 41% 7%);
+    border-radius: 15px;
+
+    box-shadow: 0 10px 25px lightgray;
 }
-.auth-buttons{
+
+/* Website title */
+main h1 {
+    font-size: 38px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/* Website description */
+main p {
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+/* Login, Register, and Register Other User buttons */
+.auth-buttons {
     position: absolute;
     display: flex;
-    top: 0;
-    right: 14px;
-    /*border: 1px solid black;*/
-    gap: 10px;    
+
+    top: 22px;
+    right: 30px;
+
+    gap: 10px;
 }
-.auth-buttons button{
-    font-weight: bold;
-    font-size: 14px;
-    padding: 8px 10px ;
-}
-.auth-buttons a{
+
+/* Remove extra space from links around buttons */
+.auth-buttons a {
+    padding: 0;
     text-decoration: none;
+}
+
+/* Button design */
+.auth-buttons button {
+    background-color: hwb(39 70% 3%);
+    color: black;
+
+    padding: 10px 15px;
+
+    border: 1px solid #b28a3c;
+    border-radius: 7px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/* Button effect */
+.auth-buttons button:hover {
+    background-color: hwb(39 55% 5%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px lightgray;
+}
+
+/* Barangay information */
+.barangay-box {
+    background-color: white;
+    padding: 10px 15px;
+
+    border: 1px solid lightgray;
+    border-radius: 8px;
+
+    box-shadow: 0 4px 10px lightgray;
+}
+
+/* Phone layout */
+@media screen and (max-width: 700px) {
+    main {
+        margin: 25px 15px;
+        padding: 140px 22px 30px;
+    }
+
+    .auth-buttons {
+        top: 25px;
+        left: 22px;
+        right: auto;
+
+        flex-wrap: wrap;
+    }
+
+    main h1 {
+        font-size: 30px;
+    }
 }

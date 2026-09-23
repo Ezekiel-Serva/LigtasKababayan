@@ -1,20 +1,26 @@
+/* Yellow header */
+.navs-container {
+    background-color: yellow;
+}
 
-    .navs-container{
-        background-color: hwb(39 41% 7%);
-        position: relative;
-        max-width: 100%;
-        overflow-x: auto;
-    }
-    .navs{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        width: max-content;
-    }
-    a{
-        text-decoration: none;
-        padding: 13px;
-        font-size: 1.2em;
-        flex-shrink: 0;
-        font-weight: bold;
-    }
+/* Yellow header hover */
+.navs a:hover {
+    background-color: gold;
+}
+
+/* Yellow top border */
+main {
+    border: 1px solid goldenrod;
+    border-top: 8px solid yellow;
+}
+
+/* Light-yellow buttons */
+.auth-buttons button {
+    background-color: lightyellow;
+    border: 1px solid goldenrod;
+}
+
+/* Yellow button when hovered */
+.auth-buttons button:hover {
+    background-color: gold;
+}

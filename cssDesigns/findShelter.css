@@ -68,3 +68,58 @@ main{
     border: 1px solid red;
     background-color: hwb(0 88% 12%);
 }
+
+/* Small premium improvements */
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: whitesmoke;
+}
+
+main{
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.gridContainer{
+    height: auto;
+    min-height: 500px;
+}
+
+#availableShelters, #occupiedShelters{
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 6px 16px lightgray;
+}
+
+#availReports, #occReports{
+    min-height: 400px;
+    padding: 15px;
+}
+
+.shelterCard{
+    background-color: white;
+    padding: 14px;
+    margin-bottom: 12px;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+}
+
+.shelterCard p{
+    margin: 6px 0;
+}
+
+.shelterCard a{
+    display: inline-block;
+    margin-top: 8px;
+}
+
+@media screen and (max-width: 700px){
+    .gridContainer{
+        grid-template-areas:
+            "availableShelters"
+            "occupiedShelters";
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}

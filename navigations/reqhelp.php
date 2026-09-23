@@ -17,7 +17,7 @@
 
     <div class="nameField">
         <b>1. Name:</b><br>
-        <input type="text" id="name" placeholder="First name, Last name">
+        <input type="text" id="name" placeholder="Fist name, Lastname">
         <br>    
     </div>
     <br>
@@ -65,28 +65,28 @@
 
 	<div class="headcountField">       
     	<b>6. Headcount:</b><br>
-        <input type="radio" name="peoples" id="count1" value="1-10">
-        1-10
+        <input type="radio" name="peoples" id="count1" value="1-15">
+        1-15
     
         <br>
-        <input type="radio" name="peoples" id="count2" value="11-20">
-      	11-20
+        <input type="radio" name="peoples" id="count2" value="16-30">
+      	16-30
     
         <br>
-        <input type="radio" name="peoples" id="count3" value="21-30">
-       	21-30
+        <input type="radio" name="peoples" id="count3" value="31-45">
+       	31-45
     
         <br>
-        <input type="radio" name="peoples" id="count4" value="31-40">
-    	31-40
+        <input type="radio" name="peoples" id="count4" value="46-55">
+    	46-55
     
         <br>
-        <input type="radio" name="peoples" id="count5" value="41-50">
-        41-50
+        <input type="radio" name="peoples" id="count5" value="56-65">
+        56-65
     
     	<br>
-        <input type="radio" name="peoples" id="count6" value="50+">
-        50+
+        <input type="radio" name="peoples" id="count6" value="66-75">
+        66-75
     </div>
 
     <br>
